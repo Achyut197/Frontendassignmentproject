@@ -45,7 +45,7 @@ This project fetches live content from a remote JSON API and renders an interact
 
 - **Floating help actions**  
   Circular buttons at the bottom-right for Help, Users, and Calendar actions.
-
+    hosting url link-   https://frontendassignement.netlify.app/
 ---
 
 ## 🗂 Project Structure
@@ -56,4 +56,3 @@ Frontendassignment/
 ├─ styles.css      # All layout, typography, and responsive styles
 └─ script.js       # Data fetching and dynamic UI logic
 
-hosting url link- https://github.com/Achyut197/Frontendassignmentproject
