@@ -3,6 +3,8 @@
 A responsive web interface that explores the world of **Technical Project Management**, inspired by the Deep Thought platform.  
 This project fetches live content from a remote JSON API and renders an interactive learning experience with a journey board, task cards, a video player, thread builder, article editor, and 4SA method viewer.
 
+
+link- https://github.com/Achyut197/Frontendassignmentproject
 ---
 
 ## ✨ Features
