@@ -1,0 +1,1068 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* Loading State */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-size: 14px;
+}
+
+/* Header - Fully Responsive */
+.main-header {
+    width: 100%;
+    max-width: 100vw;
+    height: 90px;
+    background-color: #fff;
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    opacity: 1;
+    overflow-x: hidden;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    max-width: 100%;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    background: #f0f0f0;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    flex-shrink: 0;
+}
+
+/* Main Container - Added gap for spacing */
+.main-container {
+    display: flex;
+    height: calc(100vh - 90px);
+    position: relative;
+    overflow: hidden;
+    max-width: 100vw;
+    gap: 20px;
+}
+
+/* Journey Board */
+.journey-board {
+    width: 240px;
+    min-width: 280px;
+    background-color: #fff;
+    border-right: 1px solid #e0e0e0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.journey-header {
+    padding: 20px;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.journey-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    order: 2;
+}
+
+.collapse-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    color: #666;
+    transition: color 0.3s;
+    order: 1;
+}
+
+.collapse-btn:hover {
+    color: #000;
+}
+
+.journey-content {
+    padding: 20px;
+}
+
+.journey-item {
+    margin-bottom: 20px;
+}
+
+.journey-item h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: normal;
+}
+
+.journey-item ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.journey-item li {
+    padding: 8px 0;
+    color: #666;
+    font-size: 13px;
+    cursor: pointer;
+    transition: color 0.3s;
+    word-wrap: break-word;
+}
+
+.journey-item li:hover {
+    color: #0066ff;
+}
+
+/* Collapsed Journey Board */
+.journey-collapsed {
+    position: fixed;
+    left: 0;
+    top: 90px;
+    height: calc(100vh - 90px);
+    z-index: 50;
+}
+
+.expand-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 20px 10px;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    transition: background 0.3s;
+}
+
+.expand-btn:hover {
+    background-color: #333;
+}
+
+.expand-btn i {
+    font-size: 20px;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* Main Content - With proper spacing */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 18px 30px 30px 30px;
+    background-color: #f5f5f5;
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Content Header */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.content-header h1 {
+    width: auto;
+    max-width: 100%;
+    min-height: 42px;
+    font-size: 32px;
+    color: #0066ff;
+    font-weight: 600;
+    line-height: 42px;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    flex: 1;
+    min-width: 250px;
+    word-wrap: break-word;
+}
+
+.submit-btn {
+    background-color: #0066ff;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+    height: 42px;
+    flex-shrink: 0;
+}
+
+.submit-btn:hover {
+    background-color: #0052cc;
+}
+
+/* Intro Section */
+.intro-section {
+    background-color: #e8e8e8;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.intro-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+}
+
+.intro-section p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+/* Cards Container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+    max-width: 100%;
+}
+
+.task-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 100%;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3 {
+    font-size: 16px;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.info-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.card-body {
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.card-description {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.card-description strong {
+    color: #000;
+}
+
+/* Video Container */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Thread Build Section */
+.thread-section {
+    margin-top: 20px;
+    overflow-x: hidden;
+}
+
+.thread-item {
+    margin-bottom: 15px;
+}
+
+.thread-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.thread-header i {
+    font-size: 12px;
+    transition: transform 0.3s;
+}
+
+.thread-header.collapsed i {
+    transform: rotate(-90deg);
+}
+
+.thread-content {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow-x: hidden;
+}
+
+.thread-content.active {
+    display: block;
+}
+
+.sub-thread-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.sub-thread-input {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.thread-actions {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    min-width: 35px;
+    height: 35px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    padding: 5px 10px;
+}
+
+.action-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.add-sub-thread {
+    background-color: #0066ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-sub-thread:hover {
+    background-color: #0052cc;
+}
+
+.thread-summary {
+    margin-top: 15px;
+}
+
+.thread-summary label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.summary-textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 13px;
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Article Section */
+.article-section {
+    margin-top: 20px;
+    overflow-x: hidden;
+}
+
+.article-input {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.editor-toolbar {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.toolbar-btn {
+    padding: 5px 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 12px;
+    color: #666;
+}
+
+.toolbar-btn:hover {
+    background-color: #e0e0e0;
+    border-radius: 3px;
+}
+
+/* Method Section */
+.method-section {
+    margin-top: 20px;
+    overflow-x: hidden;
+}
+
+.method-item {
+    margin-bottom: 15px;
+}
+
+.method-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.method-header i {
+    font-size: 12px;
+    transition: transform 0.3s;
+}
+
+.method-header.collapsed i {
+    transform: rotate(-90deg);
+}
+
+.method-content {
+    padding: 15px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.method-content.active {
+    display: block;
+}
+
+.method-content p {
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.see-more {
+    color: #0066ff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 10px;
+    padding: 5px 15px;
+    border-radius: 3px;
+    transition: background 0.3s;
+}
+
+.see-more:hover {
+    background-color: #e6f0ff;
+}
+
+/* Notice Board - No Vertical Scrollbar */
+.notice-board {
+    width: 50px;
+    min-width: 50px;
+    background-color: #000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 20px;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.notice-board::-webkit-scrollbar {
+    display: none;
+}
+
+.notice-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+}
+
+.notice-header i {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Help Icons */
+.help-icons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+}
+
+.help-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.help-btn.blue {
+    background-color: #0066ff;
+}
+
+.help-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Extra Large Desktops (1440px+) */
+@media (min-width: 1440px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large Desktops & Laptops (1200px - 1439px) */
+@media (max-width: 1439px) {
+    .main-header {
+        padding: 0 40px;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Medium Devices - Tablets Landscape (992px - 1199px) */
+@media (max-width: 1199px) {
+    .main-header {
+        padding: 0 30px;
+    }
+    
+    .journey-board {
+        width: 250px;
+        min-width: 250px;
+    }
+    
+    .main-content {
+        padding: 18px 25px 30px 25px;
+    }
+    
+    .content-header h1 {
+        font-size: 28px;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Tablets Portrait & Small Laptops (768px - 991px) */
+@media (max-width: 991px) {
+    .main-header {
+        height: 70px;
+        padding: 0 25px;
+    }
+    
+    .logo-img {
+        height: 40px;
+    }
+    
+    .header-right {
+        gap: 15px;
+    }
+    
+    .icon-btn {
+        min-width: 36px;
+        height: 36px;
+        font-size: 18px;
+        padding: 8px;
+    }
+    
+    .profile-icon {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .main-container {
+        height: calc(100vh - 70px);
+        gap: 0;
+    }
+    
+    .journey-board {
+        position: fixed;
+        left: -280px;
+        top: 70px;
+        height: calc(100vh - 70px);
+        z-index: 999;
+        width: 280px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+    
+    .journey-board.active {
+        transform: translateX(280px);
+    }
+    
+    .journey-collapsed {
+        top: 70px;
+        height: calc(100vh - 70px);
+        display: block !important;
+    }
+    
+    .notice-board {
+        display: none;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .content-header h1 {
+        font-size: 26px;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .submit-btn {
+        width: 100%;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Devices - Large Phones (576px - 767px) */
+@media (max-width: 767px) {
+    .main-header {
+        height: 60px;
+        padding: 0 20px;
+    }
+    
+    .logo-img {
+        height: 35px;
+    }
+    
+    .header-right {
+        gap: 10px;
+    }
+    
+    .icon-btn {
+        min-width: 32px;
+        height: 32px;
+        font-size: 16px;
+        padding: 6px;
+    }
+    
+    .profile-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .main-container {
+        height: calc(100vh - 60px);
+    }
+    
+    .journey-board {
+        top: 60px;
+        height: calc(100vh - 60px);
+        width: 260px;
+        left: -260px;
+    }
+    
+    .journey-board.active {
+        transform: translateX(260px);
+    }
+    
+    .journey-collapsed {
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+    
+    .expand-btn {
+        padding: 15px 8px;
+    }
+    
+    .main-content {
+        padding: 15px;
+    }
+    
+    .content-header {
+        margin-bottom: 20px;
+    }
+    
+    .content-header h1 {
+        font-size: 22px;
+        line-height: 1.3;
+        min-height: auto;
+    }
+    
+    .intro-section {
+        padding: 20px;
+    }
+    
+    .intro-section h2 {
+        font-size: 18px;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    .sub-thread-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .thread-content {
+        padding: 12px;
+    }
+    
+    .help-icons {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .help-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+/* Small Mobile Devices (320px - 575px) */
+@media (max-width: 575px) {
+    .main-header {
+        padding: 0 15px;
+        height: 55px;
+    }
+    
+    .logo-img {
+        height: 30px;
+    }
+    
+    .header-right {
+        gap: 8px;
+    }
+    
+    .icon-btn {
+        min-width: 30px;
+        height: 30px;
+        font-size: 14px;
+        padding: 5px;
+    }
+    
+    .profile-icon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .main-container {
+        height: calc(100vh - 55px);
+    }
+    
+    .journey-board {
+        top: 55px;
+        height: calc(100vh - 55px);
+        width: 240px;
+        left: -240px;
+    }
+    
+    .journey-board.active {
+        transform: translateX(240px);
+    }
+    
+    .journey-collapsed {
+        top: 55px;
+        height: calc(100vh - 55px);
+    }
+    
+    .expand-btn {
+        padding: 12px 6px;
+    }
+    
+    .main-content {
+        padding: 12px;
+    }
+    
+    .content-header h1 {
+        font-size: 20px;
+    }
+    
+    .submit-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+        height: 38px;
+    }
+    
+    .intro-section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .intro-section h2 {
+        font-size: 16px;
+    }
+    
+    .intro-section p {
+        font-size: 13px;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .card-header {
+        padding: 12px 15px;
+    }
+    
+    .card-header h3 {
+        font-size: 14px;
+    }
+    
+    .card-body {
+        padding: 12px;
+    }
+    
+    .card-description {
+        font-size: 13px;
+    }
+    
+    .thread-header {
+        padding: 10px 12px;
+    }
+    
+    .thread-content {
+        padding: 10px;
+    }
+    
+    .sub-thread-input {
+        font-size: 12px;
+        padding: 8px;
+    }
+    
+    .summary-textarea {
+        font-size: 12px;
+        min-height: 70px;
+    }
+    
+    .help-icons {
+        bottom: 15px;
+        right: 15px;
+        gap: 10px;
+    }
+    
+    .help-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+}
+
+/* Extra Small Devices (max 360px) */
+@media (max-width: 360px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .journey-board {
+        width: 220px;
+        left: -220px;
+    }
+    
+    .journey-board.active {
+        transform: translateX(220px);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .main-header,
+    .journey-board,
+    .journey-collapsed,
+    .notice-board,
+    .help-icons,
+    .submit-btn {
+        display: none;
+    }
+    
+    .main-content {
+        padding: 0;
+    }
+    
+    .task-card {
+        page-break-inside: avoid;
+    }
+}
